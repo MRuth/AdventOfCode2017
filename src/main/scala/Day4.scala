@@ -15,8 +15,8 @@ object Day4 extends App {
     val src = Source.fromResource("Day4.in")
     val in = src.getLines().map(_.split("\\s+"))
     val correct = in.count{passphrase =>
-      val wordComps = passphrase.map(_.groupBy(identity).mapValues(_.length).toSeq.sortBy(_._1))
-      wordComps.distinct.deep == wordComps.deep
+      val sorted = passphrase.map(_.sorted)
+      sorted.distinct.deep == sorted.deep
     }
 
     println(s"Part 2: $correct")
