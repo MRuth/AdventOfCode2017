@@ -1,5 +1,3 @@
-
-
 object Day3 extends App {
   def getIter = Iterator.iterate((0,0,0,1,true))
   { case (x, y, cStep, stps, mvX) =>
